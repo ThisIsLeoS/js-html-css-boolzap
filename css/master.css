@@ -65,17 +65,14 @@
 
         font-family: 'Ubuntu', sans-serif;
         color: #464b3d;
-
-        /* to remove the horizontal scrollbar at low resolutions */
-        overflow-x: hidden;
     }
 
     .left-col {
         float: left;
-        width: 40%;
-        height: 100%;
         display: flex;
         flex-direction: column;
+        width: 40%;
+        height: 100%;
     }
 
     .left-col > header > nav {
@@ -87,8 +84,8 @@
         justify-content: space-between;
     }
 
-    .left-col > header > nav > .icons-container > img[src*="icon"] {
-        margin-left: 15px;
+    .left-col > header > nav > .icons-container > [src*="icon"] {
+        margin-left: 20px;
         cursor: pointer;
     }
 
@@ -152,11 +149,11 @@
         /* to overwrite bootstrap's CSS */
         border: none;
 
-        color: #6d6d6d;
+        color: #464b3d;
     }
 
     .left-col > main {
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     .left-col > main > .chat-info-box {
@@ -186,10 +183,10 @@
     .left-col > main > .chat-info-box > .container > .name-and-day-container {
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     .left-col > main > .chat-info-box > .container > .name-and-day-container > .contact-name {
-        flex-grow: 1;
         font-size: 17px;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -208,9 +205,74 @@
 
     .right-col {
         float: left;
+        display: flex;
+        flex-direction: column;
         width: 60%;
         height: 100%;
-        background-color: pink; /* debug */
+    }
+
+    .right-col > header > nav {
+        display: flex;
+        height: 60px;
+        border-left: 1px solid #e3e3e3;
+        padding: 8px 15px;
+        background-color: #eeeeee;
+        align-items: center;
+    }
+
+    .right-col > header > nav > .profile-photo {
+        margin-right: 15px;
+        font-size: 17px;
+    }
+
+    .right-col > header > nav > .name-and-last-seen-container {
+        flex-grow: 1;
+    }
+    
+    .right-col > header > nav > .name-and-last-seen-container > .contact-name {
+        font-size: 17px;
+    }
+
+    .right-col > header > nav > .name-and-last-seen-container > .last-seen {
+        color: rgba(0, 0, 0, .6);
+    }
+
+    .right-col > header > nav > .icons-container > [src*="icon"] {
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .right-col > .chat-window {
+        flex-grow: 1;
+        background-image: url("img\chat-window-background.jpg");
+    }
+
+    .right-col > footer {
+        display: flex;
+        height: 62px;
+        border-left: 1px solid #e3e3e3;
+        padding: 10px 23px;
+        background-color: #eeeeee;
+        align-items: center;
+    }
+
+    .right-col > footer > .emojis-menu-icon,
+    .right-col > footer > .microphone-icon {
+        cursor: pointer;
+    }
+
+    .right-col > footer > input {
+        flex-grow: 1;
+        margin: 0px 20px;
+        
+        /* to overwrite bootstrap's CSS */
+        border: none;
+
+        border-radius: 30px;
+        padding: 10px 15px;
+        color: #7e7d7d;
+        font-size: 15px;
+        line-height: 20px;
     }
 /* /rules used in specific parts of the page */
 
