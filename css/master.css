@@ -64,13 +64,13 @@
 
         .msg-sent-by-user {
             align-self: flex-end;
-            margin-right: 7%;
+            margin-right: 9%;
             background-color: #dcf8c6;
         }
 
         .msg-sent-by-computer {
             align-self: flex-start;
-            margin-left: 7%;
+            margin-left: 9%;
             background-color: white;
         }
 

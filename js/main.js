@@ -6,8 +6,8 @@ $(".right-col > footer > .input-box").keyup(function() {
         $(".right-col > footer > .send-icon").show();
     }
     else {
-        $(".right-col > footer > .microphone-icon").show();
         $(".right-col > footer > .send-icon").hide();
+        $(".right-col > footer > .microphone-icon").show();
     }
 });
 
@@ -15,10 +15,6 @@ $(".right-col > footer > .input-box").keyup(function() {
 /* when it's clicked, the text entered in the input field to its right is printed in the chat
 window. A computer generated message is printed afterwards */
 $(".right-col > footer > .send-icon").click(function() {
-    // the input field is emptied
-    // TODO: uncomment the next line
-    // $(".right-col > footer > input").val("");
-
     // msg sent by user
     var msgByUser = $(".templates > .msg-sent").clone();
     msgByUser.addClass("msg-sent-by-user");
@@ -32,5 +28,15 @@ $(".right-col > footer > .send-icon").click(function() {
         .text("Correct!");
 
     // the messages are printed in widnow chat
-    $(".right-col > .chat-window").append(msgByUser).append(msgByComputer);
+    $(".right-col > .chat-window").append(msgByUser);
+    setTimeout(function() {
+        $(".right-col > .chat-window").append(msgByComputer);
+    }, 1000);
+
+    // the input field is emptied
+    $(".right-col > footer > input").val("");
+
+    // the send icon is changed into the microphone icon
+    $(".right-col > footer > .send-icon").hide();
+    $(".right-col > footer > .microphone-icon").show();
 });
