@@ -293,7 +293,7 @@
         cursor: pointer;
     }
 
-    .right-col > .input-bar > .input-box {
+    .right-col > .input-bar > .input-field {
         flex-grow: 1;
         margin: 0px 20px;
         width: 50px;

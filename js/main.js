@@ -9,28 +9,28 @@ $(".left-col > header > .search-bar-container > .search-bar > input").keyup(func
     $(".left-col > main > .chat-info-box:containsCaseIns(" + searchedStr + ")").show();
 });
 
-// input field in the right col's footer
+// input field in the right col's input bar
 // when a string is entered, the microphone icon to its right changes into a send icon
-$(".right-col > footer > .input-box").keyup(function() {
+$(".right-col > .input-bar > .input-field").keyup(function() {
     if ($(this).val().length > 0) {
-        $(".right-col > footer > .microphone-icon").hide();
-        $(".right-col > footer > .send-icon").show();
+        $(".right-col > .input-bar > .microphone-icon").hide();
+        $(".right-col > .input-bar > .send-icon").show();
     }
     else {
-        $(".right-col > footer > .send-icon").hide();
-        $(".right-col > footer > .microphone-icon").show();
+        $(".right-col > .input-bar > .send-icon").hide();
+        $(".right-col > .input-bar > .microphone-icon").show();
     }
 });
 
-// send icon in the right col's footer
+// send icon in the right col's input bar
 /* when it's clicked, the text entered in the input field to its left is printed in the chat
 window. A computer generated message is printed afterwards */
-$(".right-col > footer > .send-icon").click(function() {
+$(".right-col > .input-bar > .send-icon").click(function() {
     // msg sent by user
     var msgByUser = $(".templates > .msg-sent").clone();
     msgByUser.addClass("msg-sent-by-user");
     msgByUser.children(".text")
-        .text($(".right-col > footer > input").val());
+        .text($(".right-col > .input-bar > .input-field").val());
 
     // msg sent by computer
     var msgByComputer = $(".templates > .msg-sent").clone();
@@ -45,11 +45,11 @@ $(".right-col > footer > .send-icon").click(function() {
     }, 1000);
 
     // the input field is emptied
-    $(".right-col > footer > input").val("");
+    $(".right-col > .input-bar > .input-field").val("");
 
     // the send icon is changed into the microphone icon
-    $(".right-col > footer > .send-icon").hide();
-    $(".right-col > footer > .microphone-icon").show();
+    $(".right-col > .input-bar > .send-icon").hide();
+    $(".right-col > .input-bar > .microphone-icon").show();
 });
 
 // personal selectors
