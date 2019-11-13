@@ -45,6 +45,40 @@
         border-radius: 50%;
         cursor: pointer;
     }
+
+    /* templates */
+        .templates {
+            display: none;
+        }
+
+        .msg-sent {
+            display: flex;
+            flex-shrink: 0;
+            height: 33px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            align-items: center;
+        }
+
+        .msg-sent-by-user {
+            align-self: flex-end;
+            margin-right: 7%;
+            background-color: #dcf8c6;
+        }
+
+        .msg-sent-by-computer {
+            align-self: flex-start;
+            margin-left: 7%;
+            background-color: white;
+        }
+
+        .msg-sent > .time {
+            margin-left: 30px;
+        }
+    /* /templates */
+
 /* /rules used or usable in different parts of the page */
 
 /* rules used in specific parts of the page */
@@ -243,8 +277,11 @@
     }
 
     .right-col > .chat-window {
+        display: flex;
+        flex-direction: column;
         flex-grow: 1;
-        background-image: url("img\chat-window-background.jpg");
+        background: linear-gradient(rgba(229,221,213,.95), rgba(229,221,213,.95)), url("../img/chat-window-background.png");
+        overflow-y: auto;
     }
 
     .right-col > footer {
@@ -261,9 +298,10 @@
         cursor: pointer;
     }
 
-    .right-col > footer > input {
+    .right-col > footer > .input-box {
         flex-grow: 1;
         margin: 0px 20px;
+        width: 50px;
         
         /* to overwrite bootstrap's CSS */
         border: none;
@@ -273,6 +311,10 @@
         color: #7e7d7d;
         font-size: 15px;
         line-height: 20px;
+    }
+
+    .right-col > footer > .send-icon {
+        display: none;
     }
 /* /rules used in specific parts of the page */
 
