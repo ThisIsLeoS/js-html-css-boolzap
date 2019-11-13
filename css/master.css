@@ -1,10 +1,4 @@
 /* reset rules */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
     h2, p, ul {
 
         /* to overwrite bootstrap's CSS */
@@ -227,7 +221,8 @@
     }
 
     .left-col > main > .chat-info-box > .container > .name-and-day-container > .day-or-time-of-last-msg {
-        /* to create space between the name and the day or time of the last message (otherwise the two would be too close if the name is long and the resolution is lower enough)  */
+
+        /* to create space between the name and the day or time of the last message (otherwise the two would be too close if the name is long and the viewport's width is low enough)  */
         margin-left: 10px;
         font-size: 13px;
         color: rgba(0, 0, 0, .4);
@@ -284,7 +279,7 @@
         overflow-y: auto;
     }
 
-    .right-col > footer {
+    .right-col > .input-bar {
         display: flex;
         height: 62px;
         border-left: 1px solid #e3e3e3;
@@ -293,12 +288,12 @@
         align-items: center;
     }
 
-    .right-col > footer > .emojis-menu-icon,
-    .right-col > footer > .microphone-icon {
+    .right-col > .input-bar > .emojis-menu-icon,
+    .right-col > .input-bar > .microphone-icon {
         cursor: pointer;
     }
 
-    .right-col > footer > .input-box {
+    .right-col > .input-bar > .input-box {
         flex-grow: 1;
         margin: 0px 20px;
         width: 50px;
@@ -313,7 +308,7 @@
         line-height: 20px;
     }
 
-    .right-col > footer > .send-icon {
+    .right-col > .input-bar > .send-icon {
         display: none;
     }
 /* /rules used in specific parts of the page */

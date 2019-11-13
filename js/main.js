@@ -1,5 +1,16 @@
+// @ts-check
+
+// input field in the left col's search bar
+/* when a string is entered, all the chat's info boxes whose username do not contain the entered
+string are hidden */
+$(".left-col > header > .search-bar-container > .search-bar > input").keyup(function() {
+    var searchedStr = $(this).val();
+    $(".left-col > main > .chat-info-box:not(:containsCaseIns(" + searchedStr + "))").hide();
+    $(".left-col > main > .chat-info-box:containsCaseIns(" + searchedStr + ")").show();
+});
+
 // input field in the right col's footer
-// when one or more characters are entered, the microphone icon to its left changes into a send icon
+// when a string is entered, the microphone icon to its right changes into a send icon
 $(".right-col > footer > .input-box").keyup(function() {
     if ($(this).val().length > 0) {
         $(".right-col > footer > .microphone-icon").hide();
@@ -12,7 +23,7 @@ $(".right-col > footer > .input-box").keyup(function() {
 });
 
 // send icon in the right col's footer
-/* when it's clicked, the text entered in the input field to its right is printed in the chat
+/* when it's clicked, the text entered in the input field to its left is printed in the chat
 window. A computer generated message is printed afterwards */
 $(".right-col > footer > .send-icon").click(function() {
     // msg sent by user
@@ -27,7 +38,7 @@ $(".right-col > footer > .send-icon").click(function() {
     msgByComputer.children(".text")
         .text("Correct!");
 
-    // the messages are printed in widnow chat
+    // the messages are printed in the chat's window
     $(".right-col > .chat-window").append(msgByUser);
     setTimeout(function() {
         $(".right-col > .chat-window").append(msgByComputer);
@@ -39,4 +50,14 @@ $(".right-col > footer > .send-icon").click(function() {
     // the send icon is changed into the microphone icon
     $(".right-col > footer > .send-icon").hide();
     $(".right-col > footer > .microphone-icon").show();
+});
+
+// personal selectors
+
+/* case insensitive contains
+reference: https://stackoverflow.com/a/12113443/12253537 */
+jQuery.expr[":"].containsCaseIns = jQuery.expr.createPseudo(function (arg) {
+    return function (elem) {
+        return jQuery(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+    };
 });
