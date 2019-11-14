@@ -62,14 +62,14 @@
     <main>
 
       <!-- boxes with the chats' info -->
-      <div class="chat-info-box">
+      <div class="chat-info-box clicked">
         <img src="img/marco-profile-photo.jpg" alt="Marco's photo" class="profile-photo">
         <div class="container">
           <div class="name-and-day-container">
             <span class="contact-name">Marco</span>
             <span class="day-or-time-of-last-msg">foo/foo/foo</span>
           </div>
-          <span class="contact-last-msg">foooooooooooooooooooooooooooooooooooooooooooooooooo</span>  
+          <span class="contact-last-msg">foooooooooooooooooooooooooooooooooooooooooooooooooo</span>
         </div>
       </div>
       
@@ -80,7 +80,7 @@
             <span class="contact-name">Chiara</span>
             <span class="day-or-time-of-last-msg">foo/foo/foo</span>
           </div>
-          <span class="contact-last-msg">foooooooooooooooooooooooooooooooooooooooooooooooooo</span>  
+          <span class="contact-last-msg">foooooooooooooooooooooooooooooooooooooooooooooooooo</span>
         </div>
       </div>
       
@@ -91,7 +91,7 @@
             <span class="contact-name">Dexter</span>
             <span class="day-or-time-of-last-msg">foo/foo/foo</span>
           </div>
-          <span class="contact-last-msg">foooooooooooooooooooooooooooooooooooooooooooooooooo</span>  
+          <span class="contact-last-msg">foooooooooooooooooooooooooooooooooooooooooooooooooo</span>
         </div>
       </div>
       
@@ -102,7 +102,7 @@
             <span class="contact-name">Flavia</span>
             <span class="day-or-time-of-last-msg">foo/foo/foo</span>
           </div>
-          <span class="contact-last-msg">foooooooooooooooooooooooooooooooooooooooooooooooooo</span>  
+          <span class="contact-last-msg">foooooooooooooooooooooooooooooooooooooooooooooooooo</span>
         </div>
       </div>
       
@@ -113,7 +113,7 @@
             <span class="contact-name">Luigi</span>
             <span class="day-or-time-of-last-msg">foo/foo/foo</span>
           </div>
-          <span class="contact-last-msg">foooooooooooooooooooooooooooooooooooooooooooooooooo</span>  
+          <span class="contact-last-msg">foooooooooooooooooooooooooooooooooooooooooooooooooo</span>
         </div>
       </div>
       
@@ -124,10 +124,10 @@
             <span class="contact-name">Ugo</span>
             <span class="day-or-time-of-last-msg">foo/foo/foo</span>
           </div>
-          <span class="contact-last-msg">foooooooooooooooooooooooooooooooooooooooooooooooooo</span>  
+          <span class="contact-last-msg">foooooooooooooooooooooooooooooooooooooooooooooooooo</span>
         </div>
       </div>
-      <!-- boxes with the chats' info -->
+      <!-- /boxes with the chats' info -->
 
     </main>
     <!-- /left col's main -->
@@ -164,8 +164,13 @@
     <!-- /right col's header -->
 
     <!-- right col's chat window -->
-     <main class="chat-window">
-
+    <main class="chat-windows-container">
+      <div class="chat-window opened" data-name="Marco"></div>
+      <div class="chat-window" data-name="Chiara"></div>
+      <div class="chat-window" data-name="Dexter"></div>
+      <div class="chat-window" data-name="Flavia"></div>
+      <div class="chat-window" data-name="Luigi"></div>
+      <div class="chat-window" data-name="Ugo"></div>
     </main>
     <!-- /right col's chat window -->
 
@@ -183,15 +188,24 @@
 
   <!-- hidden box containing my templates -->
   <div class="templates">
+
+    <!-- message sent -->
     <div class="msg-sent">
       <span class="text">foooooooooooooooo</span>
       <span class="time">foo:foo</span>
+      <div class="my_dropdown">
+        <i class="fas fa-chevron-down arrow-down-icon"></i>
+        <div class="menu">
+          <span>Delete message</span>
+        </div>
+      </div>
     </div>
+    <!-- /message sent -->
+
   </div>
 
   <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
 
   <!-- personal JS -->
   <script src="js/main.js"></script>
