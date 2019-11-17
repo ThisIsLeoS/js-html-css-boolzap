@@ -13,6 +13,8 @@ $(".left-col > header > .search-bar-container > .search-bar > input").keyup(func
 // boxes with chats info in the left col
 
 $(".left-col > main > .chat-info-box").click(function() {
+
+    // the .clicked class is added to the clicked element
     $(".left-col > main > .chat-info-box.clicked").removeClass("clicked");
     $(this).addClass("clicked");
 
@@ -31,6 +33,75 @@ $(".left-col > main > .chat-info-box").click(function() {
     // the name in the right col's header is updated
     var name = $(this).find(".contact-name").text();
     $(".right-col > header > nav .contact-name").text(name);
+});
+
+// dropdown toggle in the message boxes of the chat window
+
+$(".chat-window").on("click", ".msg-sent .my_dropdown .my_dropdown-toggle", function() {
+
+    // hide other open dropdown toggles and dropdown menus
+    $(".msg-sent .my_dropdown .my_dropdown-toggle").not($(this)).hide();
+    $(".msg-sent .my_dropdown .my_dropdown-menu").not($(this).siblings(".my_dropdown-menu")).hide();
+});
+
+// message boxes in the chat window
+
+$(".chat-window").on({
+    mouseenter() {
+
+        /* show the dropdown toggle (in case it was previously hidden via JavaScript (inline css
+        overwrites external CSS)) */
+        $(this).find(".my_dropdown .my_dropdown-toggle").show();
+    },
+    mouseleave() {
+
+        // if the dropdown menu is visible
+        if ($(this).find(".my_dropdown > .my_dropdown-menu").css("display") !== "none") {
+
+            // keep the dropdown menu visibile and make the dropdown toggle visible too
+            $(this).find(".my_dropdown > .my_dropdown-toggle").show();
+        }
+        // else hide the dropdown toggle
+        else {
+            $(this).find(".my_dropdown .my_dropdown-toggle").hide();
+        }
+    }
+}, ".msg-sent");
+
+// document
+
+/* if the click is on the "delete" button of a message box's open dropdown menu, the corresponding
+message is deleted. If the click is anywhere else on the page the open dropdown menu is closed. */
+$(document).click(function(event) {
+
+    // if the clicked element is the "delete" button a message box's open dropdown menu
+    if ($(event.target).is(".my_dropdown-menu .delete")) {
+
+        // hide the corresponding message box
+        $(event.target).parents(".msg-sent").hide();
+    }
+
+    // else if it is a dropdown toggle
+    else if ($(event.target).is(".my_dropdown-toggle")) {
+
+        // toggle the dropdown menu
+        $(event.target).siblings(".my_dropdown-menu").toggle();
+    }
+
+    // else if it is a message box (or an element contained in a message box)
+    else if ($(event.target).is(".msg-sent, .msg-sent *")) {
+
+        // hide the dropdown menu (but not the dropdown toggle)
+        $(".msg-sent .my_dropdown > .my_dropdown-menu").hide();
+    }
+
+    // else if it is any other element but a message box
+    else if ($(event.target).is(":not(.msg-sent)")) {
+
+        // hide both the dropdown toggle and the dropdown menu
+        $(".msg-sent .my_dropdown > .my_dropdown-menu").hide();
+        $(".msg-sent .my_dropdown > .my_dropdown-toggle").hide();
+    }
 });
 
 // input field in the right col's input bar
@@ -82,14 +153,16 @@ function printMsgs() {
     // msg sent by user
     var msgByUser = $(".templates > .msg-sent").clone();
     msgByUser.addClass("msg-sent-by-user");
+    msgByUser.find(".my_dropdown > .my_dropdown-menu").addClass("to-the-left");
     msgByUser.children(".text")
         .text($(".right-col > .input-bar > .input-field").val());
 
     // msg sent by computer
     var msgByComputer = $(".templates > .msg-sent").clone();
     msgByComputer.addClass("msg-sent-by-computer");
+    msgByComputer.find(".my_dropdown > .my_dropdown-menu").addClass("to-the-right");
     msgByComputer.children(".text")
-        .text("Ok!");
+        .text("ok!");
 
     // the user's message is printed to the chat window
     chatWindow.append(msgByUser);
