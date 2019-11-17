@@ -136,8 +136,9 @@ $(".right-col > .input-bar > .send-icon").click(function() {
 /* This function:
 1) creates a box containing the user's message and a box containing the computer's message and
 appends them to the chat window
-2) empties the input field
-3) changes the send icon on the right of the input field into the microphone icon */
+2) updates the message and the time in the current left col's chat info box
+3) empties the input field
+4) changes the send icon on the right of the input field into the microphone icon */
 var timeout;
 function printMsgs() {
     var date, time, text;
