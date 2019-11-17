@@ -156,7 +156,7 @@ function printMsgs() {
     var msgByUser = $(".templates > .msg-box").clone();
     msgByUser.addClass("by-user");
     date = new Date();
-    // note: a leading 0 is added to the minutes when necessary 
+    // note: a leading 0 is added to the minutes when necessary
     time = date.getHours() + ":" + (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
     msgByUser.find(".time").text(time);
     msgByUser.find(".my_dropdown > .my_dropdown-toggle").addClass("by-user");
