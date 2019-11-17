@@ -141,7 +141,7 @@ appends them to the chat window
 4) changes the send icon on the right of the input field into the microphone icon */
 var timeout;
 function printMsgs() {
-    var date, time, text;
+    var time, text;
 
     /* the timeout set at the end of this method is cleared. This way, if the user sends multiple
     messages in a second, only one computer's message is printed after the last user's message.
@@ -156,10 +156,7 @@ function printMsgs() {
     // msg sent by user
     var msgByUser = $(".templates > .msg-box").clone();
     msgByUser.addClass("by-user");
-    date = new Date();
-    // note: a leading 0 is added to the minutes when necessary
-    time = date.getHours() + ":" + (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
-    msgByUser.find(".time").text(time);
+    msgByUser.find(".time").text(currentTime());
     msgByUser.find(".my_dropdown > .my_dropdown-toggle").addClass("by-user");
     msgByUser.find(".my_dropdown > .my_dropdown-menu").addClass("to-the-left");
     msgByUser.children(".text")
@@ -168,9 +165,7 @@ function printMsgs() {
     // msg sent by computer
     var msgByComputer = $(".templates > .msg-box").clone();
     msgByComputer.addClass("by-computer");
-    date = new Date();
-    // note: a leading 0 is added to the minutes when necessary
-    time = date.getHours() + ":" + (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+    time = currentTime();
     msgByComputer.find(".time").text(time);
     msgByComputer.find(".my_dropdown > .my_dropdown-toggle").addClass("by-computer");
     msgByComputer.find(".my_dropdown > .my_dropdown-menu").addClass("to-the-right");
@@ -209,6 +204,14 @@ function printMsgs() {
 // this function scrolls the chat window to the bottom
 function scrollChatWindowToBottom(chatWindow) {
     chatWindow.scrollTop(chatWindow.prop("scrollHeight"));
+}
+
+// returns a string containing the current time in the hh:mm format
+function currentTime() {
+    var date = new Date();
+
+    // a leading 0 is added to the minutes when necessary
+    return date.getHours() + ":" + (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
 }
 
 // personal selectors
