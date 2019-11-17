@@ -152,14 +152,16 @@ function printMsgs() {
 
     // msg sent by user
     var msgByUser = $(".templates > .msg-box").clone();
-    msgByUser.addClass("msg-box-by-user");
+    msgByUser.addClass("by-user");
+    msgByUser.find(".my_dropdown > .my_dropdown-toggle").addClass("by-user");
     msgByUser.find(".my_dropdown > .my_dropdown-menu").addClass("to-the-left");
     msgByUser.children(".text")
         .text($(".right-col > .input-bar > .input-field").val());
 
     // msg sent by computer
     var msgByComputer = $(".templates > .msg-box").clone();
-    msgByComputer.addClass("msg-box-by-computer");
+    msgByComputer.addClass("by-computer");
+    msgByComputer.find(".my_dropdown > .my_dropdown-toggle").addClass("by-computer");
     msgByComputer.find(".my_dropdown > .my_dropdown-menu").addClass("to-the-right");
     msgByComputer.children(".text")
         .text("ok!");
