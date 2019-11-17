@@ -46,42 +46,39 @@
         display: none;
     }
 
-    .msg-sent {
+    .msg-box {
         position: relative;
         display: flex;
         height: 33px;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin: 5px 9%;
         padding: 5px 10px;
         border-radius: 15px;
         align-items: center;
     }
 
-    .msg-sent:first-child {
+    .msg-box:first-child {
         margin-top: 10px;
     }
 
-    .msg-sent:last-child {
+    .msg-box:last-child {
         margin-bottom: 10px;
     }
 
-    .msg-sent-by-user {
+    .msg-box-by-user {
         align-self: flex-end;
-        margin-right: 9%;
         background-color: #dcf8c6;
     }
 
-    .msg-sent-by-computer {
+    .msg-box-by-computer {
         align-self: flex-start;
-        margin-left: 9%;
         background-color: white;
     }
 
-    .msg-sent > .time {
+    .msg-box > .time {
         margin-left: 30px;
     }
 
-    .msg-sent > .my_dropdown > .my_dropdown-toggle {
+    .msg-box > .my_dropdown > .my_dropdown-toggle {
         position: absolute;
         right: 10px;
         display: none;
@@ -89,11 +86,11 @@
         transform: translate(0, -50%);
     }
 
-    .msg-sent:hover > .my_dropdown > .my_dropdown-toggle {
+    .msg-box:hover > .my_dropdown > .my_dropdown-toggle {
         display: block;
     }
 
-    .msg-sent > .my_dropdown > .my_dropdown-menu {
+    .msg-box > .my_dropdown > .my_dropdown-menu {
         position: absolute;
         top: 95%;
         display: none;
@@ -108,12 +105,12 @@
     }
 
     /* to position the dropdown menu so that it doesn't get cut off at lower viewport widths */
-    .msg-sent.msg-sent-by-user > .my_dropdown > .my_dropdown-menu.to-the-left {
+    .msg-box.msg-sent-by-user > .my_dropdown > .my_dropdown-menu.to-the-left {
         right: -7px;
     }
 
     /* to position the dropdown menu so that it doesn't get cut off at lower viewport widths */
-    .msg-sent.msg-sent-by-computer > .my_dropdown > .my_dropdown-menu.to-the-right {
+    .msg-box.msg-sent-by-computer > .my_dropdown > .my_dropdown-menu.to-the-right {
         left: -6px;
     }
 /* /templates */

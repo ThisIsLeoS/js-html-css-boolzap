@@ -37,11 +37,11 @@ $(".left-col > main > .chat-info-box").click(function() {
 
 // dropdown toggle in the message boxes of the chat window
 
-$(".chat-window").on("click", ".msg-sent .my_dropdown .my_dropdown-toggle", function() {
+$(".chat-window").on("click", ".msg-box .my_dropdown .my_dropdown-toggle", function() {
 
     // hide other open dropdown toggles and dropdown menus
-    $(".msg-sent .my_dropdown .my_dropdown-toggle").not($(this)).hide();
-    $(".msg-sent .my_dropdown .my_dropdown-menu").not($(this).siblings(".my_dropdown-menu")).hide();
+    $(".msg-box .my_dropdown .my_dropdown-toggle").not($(this)).hide();
+    $(".msg-box .my_dropdown .my_dropdown-menu").not($(this).siblings(".my_dropdown-menu")).hide();
 });
 
 // message boxes in the chat window
@@ -66,7 +66,7 @@ $(".chat-window").on({
             $(this).find(".my_dropdown .my_dropdown-toggle").hide();
         }
     }
-}, ".msg-sent");
+}, ".msg-box");
 
 // document
 
@@ -78,7 +78,7 @@ $(document).click(function(event) {
     if ($(event.target).is(".my_dropdown-menu .delete")) {
 
         // hide the corresponding message box
-        $(event.target).parents(".msg-sent").hide();
+        $(event.target).parents(".msg-box").hide();
     }
 
     // else if it is a dropdown toggle
@@ -89,18 +89,18 @@ $(document).click(function(event) {
     }
 
     // else if it is a message box (or an element contained in a message box)
-    else if ($(event.target).is(".msg-sent, .msg-sent *")) {
+    else if ($(event.target).is(".msg-box, .msg-box *")) {
 
         // hide the dropdown menu (but not the dropdown toggle)
-        $(".msg-sent .my_dropdown > .my_dropdown-menu").hide();
+        $(".msg-box .my_dropdown > .my_dropdown-menu").hide();
     }
 
     // else if it is any other element but a message box
-    else if ($(event.target).is(":not(.msg-sent)")) {
+    else if ($(event.target).is(":not(.msg-box)")) {
 
         // hide both the dropdown toggle and the dropdown menu
-        $(".msg-sent .my_dropdown > .my_dropdown-menu").hide();
-        $(".msg-sent .my_dropdown > .my_dropdown-toggle").hide();
+        $(".msg-box .my_dropdown > .my_dropdown-menu").hide();
+        $(".msg-box .my_dropdown > .my_dropdown-toggle").hide();
     }
 });
 
@@ -151,15 +151,15 @@ function printMsgs() {
     var chatWindow = $(".right-col > .chat-windows-container > .chat-window.opened");
 
     // msg sent by user
-    var msgByUser = $(".templates > .msg-sent").clone();
-    msgByUser.addClass("msg-sent-by-user");
+    var msgByUser = $(".templates > .msg-box").clone();
+    msgByUser.addClass("msg-box-by-user");
     msgByUser.find(".my_dropdown > .my_dropdown-menu").addClass("to-the-left");
     msgByUser.children(".text")
         .text($(".right-col > .input-bar > .input-field").val());
 
     // msg sent by computer
-    var msgByComputer = $(".templates > .msg-sent").clone();
-    msgByComputer.addClass("msg-sent-by-computer");
+    var msgByComputer = $(".templates > .msg-box").clone();
+    msgByComputer.addClass("msg-box-by-computer");
     msgByComputer.find(".my_dropdown > .my_dropdown-menu").addClass("to-the-right");
     msgByComputer.children(".text")
         .text("ok!");
