@@ -49,7 +49,9 @@
     .msg-box {
         position: relative;
         display: flex;
-        height: 33px;
+
+        /* min-height instead of height so that this box can grow with the text inside of it */
+        min-height: 33px;
         margin: 5px 9%;
         padding: 5px 10px;
         border-radius: 15px;
