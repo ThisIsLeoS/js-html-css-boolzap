@@ -108,13 +108,17 @@
         top: 28px;
         display: none;
         border-radius: 5px;
-        padding: 15px;
         background-color: white;
         box-shadow: 0 2px 5px 0 rgba(0,0,0,.26),0 2px 10px 0 rgba(0,0,0,.16);
         color: #444;
         white-space: nowrap;
         cursor: pointer;
         z-index: 10;
+    }
+
+    .msg-box > .my_dropdown > .my_dropdown-menu .delete {
+        display: inline-block;
+        padding: 15px;
     }
 
     /* to position the dropdown menu so that it doesn't get cut off at lower viewport widths */
