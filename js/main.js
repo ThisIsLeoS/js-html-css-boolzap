@@ -177,9 +177,8 @@ function printMsgs() {
     msgByComputer.children(".text")
         .text(text);
 
-    // the current left col's chat info box is updated
+    // the time in the current left col's chat info box is updated
     $(".left-col .chat-info-box.clicked .time-of-last-msg").text(time);
-    $(".left-col .chat-info-box.clicked .contact-last-msg").text(text);
 
     // the user's message is printed to the chat window
     chatWindow.append(msgByUser);
@@ -197,6 +196,9 @@ function printMsgs() {
     // the computer's message are appended to the chat window
     timeout = setTimeout(function() {
         chatWindow.append(msgByComputer);
+
+        // the message in the current left col's chat info box is updated
+        $(".left-col .chat-info-box.clicked .contact-last-msg").text(text);
 
         // the chat window is scrolled to the bottom to make the message visible
         scrollChatWindowToBottom(chatWindow);
