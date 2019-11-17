@@ -82,10 +82,9 @@
 
     .msg-box > .my_dropdown > .my_dropdown-toggle {
         position: absolute;
-        right: 10px;
+        top: 6px;
+        right: 12px;
         display: none;
-        top: 50%;
-        transform: translate(0, -50%);
     }
 
     .msg-box:hover > .my_dropdown > .my_dropdown-toggle {
@@ -94,7 +93,7 @@
 
     .msg-box > .my_dropdown > .my_dropdown-menu {
         position: absolute;
-        top: 95%;
+        top: 24px;
         display: none;
         border-radius: 5px;
         padding: 15px;
@@ -107,13 +106,13 @@
     }
 
     /* to position the dropdown menu so that it doesn't get cut off at lower viewport widths */
-    .msg-box.msg-sent-by-user > .my_dropdown > .my_dropdown-menu.to-the-left {
-        right: -7px;
+    .msg-box.msg-box-by-user > .my_dropdown > .my_dropdown-menu.to-the-left {
+        right: 5px;
     }
 
     /* to position the dropdown menu so that it doesn't get cut off at lower viewport widths */
-    .msg-box.msg-sent-by-computer > .my_dropdown > .my_dropdown-menu.to-the-right {
-        left: -6px;
+    .msg-box.msg-box-by-computer > .my_dropdown > .my_dropdown-menu.to-the-right {
+        left: 74%;
     }
 /* /templates */
 
