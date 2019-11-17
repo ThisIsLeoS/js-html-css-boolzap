@@ -140,6 +140,8 @@ prints them to the chat window
 3) changes the send icon on the right of the input field into the microphone icon */
 var timeout;
 function printMsgs() {
+    var date;
+
     /* the timeout set at the end of this method is cleared. This way, if the user sends multiple
     messages in a second, only one computer's message is printed after the last user's message.
     Note: the first time this method is called, timeout is undefined, but passing an undefined
@@ -153,6 +155,8 @@ function printMsgs() {
     // msg sent by user
     var msgByUser = $(".templates > .msg-box").clone();
     msgByUser.addClass("by-user");
+    date = new Date();
+    msgByUser.find(".time").text(date.getHours() + ":" + date.getMinutes());
     msgByUser.find(".my_dropdown > .my_dropdown-toggle").addClass("by-user");
     msgByUser.find(".my_dropdown > .my_dropdown-menu").addClass("to-the-left");
     msgByUser.children(".text")
@@ -161,6 +165,8 @@ function printMsgs() {
     // msg sent by computer
     var msgByComputer = $(".templates > .msg-box").clone();
     msgByComputer.addClass("by-computer");
+    date = new Date();
+    msgByComputer.find(".time").text(date.getHours() + ":" + date.getMinutes());
     msgByComputer.find(".my_dropdown > .my_dropdown-toggle").addClass("by-computer");
     msgByComputer.find(".my_dropdown > .my_dropdown-menu").addClass("to-the-right");
     msgByComputer.children(".text")
