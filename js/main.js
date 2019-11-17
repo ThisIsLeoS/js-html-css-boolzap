@@ -135,12 +135,12 @@ $(".right-col > .input-bar > .send-icon").click(function() {
 
 /* This function:
 1) creates a box containing the user's message and a box containing the computer's message and
-prints them to the chat window
+appends them to the chat window
 2) empties the input field
 3) changes the send icon on the right of the input field into the microphone icon */
 var timeout;
 function printMsgs() {
-    var date;
+    var date, time, text;
 
     /* the timeout set at the end of this method is cleared. This way, if the user sends multiple
     messages in a second, only one computer's message is printed after the last user's message.
@@ -156,7 +156,9 @@ function printMsgs() {
     var msgByUser = $(".templates > .msg-box").clone();
     msgByUser.addClass("by-user");
     date = new Date();
-    msgByUser.find(".time").text(date.getHours() + ":" + date.getMinutes());
+    // note: a leading 0 is added to the minutes when necessary 
+    time = date.getHours() + ":" + (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+    msgByUser.find(".time").text(time);
     msgByUser.find(".my_dropdown > .my_dropdown-toggle").addClass("by-user");
     msgByUser.find(".my_dropdown > .my_dropdown-menu").addClass("to-the-left");
     msgByUser.children(".text")
@@ -166,11 +168,18 @@ function printMsgs() {
     var msgByComputer = $(".templates > .msg-box").clone();
     msgByComputer.addClass("by-computer");
     date = new Date();
-    msgByComputer.find(".time").text(date.getHours() + ":" + date.getMinutes());
+    // note: a leading 0 is added to the minutes when necessary
+    time = date.getHours() + ":" + (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+    msgByComputer.find(".time").text(time);
     msgByComputer.find(".my_dropdown > .my_dropdown-toggle").addClass("by-computer");
     msgByComputer.find(".my_dropdown > .my_dropdown-menu").addClass("to-the-right");
+    text = "ok!";
     msgByComputer.children(".text")
-        .text("ok!");
+        .text(text);
+
+    // the current left col's chat info box is updated
+    $(".left-col .chat-info-box.clicked .time-of-last-msg").text(time);
+    $(".left-col .chat-info-box.clicked .contact-last-msg").text(text);
 
     // the user's message is printed to the chat window
     chatWindow.append(msgByUser);
@@ -185,7 +194,7 @@ function printMsgs() {
     $(".right-col > .input-bar > .send-icon").hide();
     $(".right-col > .input-bar > .microphone-icon").show();
 
-    // the computer's message is printed to the chat window
+    // the computer's message are appended to the chat window
     timeout = setTimeout(function() {
         chatWindow.append(msgByComputer);
 

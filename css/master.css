@@ -268,6 +268,7 @@
     }
 
     .left-col > main > .chat-info-box > .container {
+        flex-grow: 1;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
@@ -280,12 +281,13 @@
     }
 
     .left-col > main > .chat-info-box > .container > .name-and-day-container > .contact-name {
+        flex-grow: 1;
         font-size: 17px;
         text-overflow: ellipsis;
         overflow: hidden;
     }
 
-    .left-col > main > .chat-info-box > .container > .name-and-day-container > .day-or-time-of-last-msg {
+    .left-col > main > .chat-info-box > .container > .name-and-day-container > .time-of-last-msg {
 
         /* to create space between the name and the day or time of the last message (otherwise the two would be too close if the name is long and the viewport's width is low enough)  */
         margin-left: 10px;
