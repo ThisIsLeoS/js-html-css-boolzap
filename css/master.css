@@ -50,12 +50,23 @@
         position: relative;
         display: flex;
 
+        /* to avoid shrinking of the message boxes that contain a multiple line message when the
+        message boxes have overflowed the chat window */
+        flex-shrink: 0;
+
         /* min-height instead of height so that this box can grow with the text inside of it */
         min-height: 33px;
         margin: 5px 9%;
         padding: 5px 10px;
         border-radius: 15px;
         align-items: center;
+    }
+
+    .msg-box .text {
+
+        /* to avoid the overflow of long words */
+        word-break: normal;
+        overflow-wrap: anywhere;
     }
 
     .msg-box:first-child {
