@@ -372,6 +372,7 @@
 
     .right-col > .input-bar > .send-icon {
         display: none;
+        cursor: pointer;
     }
 /* /rules used in specific parts of the page */
 
