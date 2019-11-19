@@ -1,5 +1,3 @@
-// @ts-check
-
 // input field in the left col's search bar
 
 /* when a string is entered, all the chat's info boxes whose username do not contain the entered
