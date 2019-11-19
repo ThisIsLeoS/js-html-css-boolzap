@@ -8,7 +8,7 @@
 /* /rules used or usable in different parts of the page */
 
 /* templates */
-    .templates {
+    #templates {
         display: none;
     }
 

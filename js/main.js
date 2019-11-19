@@ -152,7 +152,7 @@ function printMsgs() {
     var chatWindow = $(".right-col > .chat-windows-container > .chat-window.opened");
 
     // msg sent by user
-    var msgByUser = $(".templates > .msg-box").clone();
+    var msgByUser = $("#templates > .msg-box").clone();
     msgByUser.addClass("by-user");
     msgByUser.find(".time").text(currentTime());
     msgByUser.find(".my_dropdown > .my_dropdown-toggle").addClass("by-user");
@@ -161,7 +161,7 @@ function printMsgs() {
         .text($(".right-col > .input-bar > .input-field").val());
 
     // msg sent by computer
-    var msgByComputer = $(".templates > .msg-box").clone();
+    var msgByComputer = $("#templates > .msg-box").clone();
     msgByComputer.addClass("by-computer");
     time = currentTime();
     msgByComputer.find(".time").text(time);
