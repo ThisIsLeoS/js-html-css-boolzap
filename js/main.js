@@ -1,4 +1,6 @@
-// input field in the left col's search bar
+/*
+ * input field in the left col's search bar
+ */ 
 
 /* when a string is entered, all the chat's info boxes whose username do not contain the entered
 string are hidden */
@@ -8,8 +10,9 @@ $(".left-col > header > .search-bar-container > .search-bar > input").keyup(func
     $(".left-col > main > .chat-info-box:containsCaseIns(" + searchedStr + ")").show();
 });
 
-// boxes with chats info in the left col
-
+/*
+ * boxes with chats info in the left col
+ */
 $(".left-col > main > .chat-info-box").click(function() {
 
     // the .clicked class is added to the clicked element
@@ -33,8 +36,9 @@ $(".left-col > main > .chat-info-box").click(function() {
     $(".right-col > header > nav .contact-name").text(name);
 });
 
-// dropdown toggle in the message boxes of the chat window
-
+/*
+ * dropdown toggle in the message boxes of the chat window
+ */
 $(".chat-window").on("click", ".msg-box .my_dropdown .my_dropdown-toggle", function() {
 
     // hide other open dropdown toggles and dropdown menus
@@ -42,8 +46,9 @@ $(".chat-window").on("click", ".msg-box .my_dropdown .my_dropdown-toggle", funct
     $(".msg-box .my_dropdown .my_dropdown-menu").not($(this).siblings(".my_dropdown-menu")).hide();
 });
 
-// message boxes in the chat window
-
+/* 
+ * message boxes in the chat window
+ */
 $(".chat-window").on({
     mouseenter() {
 
@@ -66,7 +71,9 @@ $(".chat-window").on({
     }
 }, ".msg-box");
 
-// document
+/* 
+ * document
+ */
 
 /* if the click is on the "delete" button of a message box's open dropdown menu, the corresponding
 message is deleted. If the click is anywhere else on the page the open dropdown menu is closed. */
@@ -102,7 +109,9 @@ $(document).click(function(event) {
     }
 });
 
-// input field in the right col's input bar
+/*  
+ * input field in the right col's input bar
+ */
 
 /* when a string is entered, the microphone icon to its right changes into a send icon. If the
 newline character is entered, the printMsgs method is called */
@@ -122,7 +131,9 @@ $(".right-col > .input-bar > .input-field").keyup(function(key) {
     }
 });
 
-// send icon in the right col's input bar
+/* 
+ * send icon in the right col's input bar
+ */
 
 /* when it's clicked, the printMsgs method is called */
 $(".right-col > .input-bar > .send-icon").click(function() {
