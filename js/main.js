@@ -121,7 +121,7 @@ $(".right-col > .input-bar > .input-field").keyup(function(key) {
         $(".right-col > .input-bar > .send-icon").show();
 
         // if the newline character has been entered
-        if (key.keyCode === 13) {
+        if (key.key === "Enter") {
             printMsgs();
         }
     }
