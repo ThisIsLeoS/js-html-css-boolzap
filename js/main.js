@@ -1,6 +1,6 @@
 /*
  * input field in the left col's search bar
- */ 
+ */
 
 /* when a string is entered, all the chat's info boxes whose username do not contain the entered
 string are hidden */
@@ -46,7 +46,7 @@ $(".chat-window").on("click", ".msg-box .my_dropdown .my_dropdown-toggle", funct
     $(".msg-box .my_dropdown .my_dropdown-menu").not($(this).siblings(".my_dropdown-menu")).hide();
 });
 
-/* 
+/*
  * message boxes in the chat window
  */
 $(".chat-window").on({
@@ -71,7 +71,7 @@ $(".chat-window").on({
     }
 }, ".msg-box");
 
-/* 
+/*
  * document
  */
 
@@ -109,7 +109,7 @@ $(document).click(function(event) {
     }
 });
 
-/*  
+/*
  * input field in the right col's input bar
  */
 
@@ -131,7 +131,7 @@ $(".right-col > .input-bar > .input-field").keyup(function(key) {
     }
 });
 
-/* 
+/*
  * send icon in the right col's input bar
  */
 
