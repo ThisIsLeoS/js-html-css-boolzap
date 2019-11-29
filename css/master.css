@@ -244,27 +244,27 @@
         margin-right: 15px;
     }
 
-    .left-col > main > .chat-info-box > .container {
+    .left-col > main > .chat-info-box > .my_container {
         flex-grow: 1;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
     }
 
-    .left-col > main > .chat-info-box > .container > .name-and-day-container {
+    .left-col > main > .chat-info-box > .my_container > .name-and-day-container {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    .left-col > main > .chat-info-box > .container > .name-and-day-container > .contact-name {
+    .left-col > main > .chat-info-box > .my_container > .name-and-day-container > .contact-name {
         flex-grow: 1;
         font-size: 17px;
         text-overflow: ellipsis;
         overflow: hidden;
     }
 
-    .left-col > main > .chat-info-box > .container > .name-and-day-container > .time-of-last-msg {
+    .left-col > main > .chat-info-box > .my_container > .name-and-day-container > .time-of-last-msg {
 
         /* to create space between the name and the day or time of the last message (otherwise the two would be too close if the name is long and the viewport's width is low enough)  */
         margin-left: 10px;
@@ -272,7 +272,7 @@
         color: rgba(0, 0, 0, .4);
     }
 
-    .left-col > main > .chat-info-box > .container > .contact-last-msg {
+    .left-col > main > .chat-info-box > .my_container > .contact-last-msg {
         color: rgba(0, 0, 0, .6);
     }
 
