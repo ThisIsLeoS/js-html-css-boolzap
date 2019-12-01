@@ -121,6 +121,7 @@
     }
     
     body {
+        min-width: 350px;
 
         /* to make a reference for the percentage heights of thix box's children */
         height: 100%;
@@ -334,8 +335,8 @@
     }
 
     /* workaround to make visible the bottom margin of the last message of the window chat (the last
-    child's bottom margin or padding is ignored when the parent has the overflow property: the
-    overflow property applies only to content (it doesn't apply to paddings or margins) */
+    child's bottom margin or padding is ignored when the parent has the overflow property. The
+    overflow property applies only to content (it doesn't apply to paddings or margins)) */
     .right-col > .chat-windows-container > .chat-window::after {
         content: "";
         flex-basis: 1px;
