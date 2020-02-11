@@ -1,3 +1,11 @@
+/* reset rules */
+    input:focus {
+
+        /* to overwrite chrome's CSS */
+        outline: none;
+    }
+/* /reset rules */
+
 /* rules used or usable in different parts of the page */
     .profile-photo {
         width: auto;
